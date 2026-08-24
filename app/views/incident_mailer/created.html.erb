@@ -1,0 +1,13 @@
+<h1>Incident reported</h1>
+
+<p>Hi,</p>
+
+<p>Your incident has been logged:</p>
+
+<ul>
+  <li><strong>Title:</strong> <%= @incident.title %></li>
+  <li><strong>Severity:</strong> <%= @incident.severity.humanize %></li>
+  <li><strong>Status:</strong> <%= @incident.status.humanize %></li>
+</ul>
+
+<p><%= link_to "View incident", incident_url(@incident) %></p>

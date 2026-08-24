@@ -1,0 +1,9 @@
+reporter_user:
+  email_address: reporter@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: 0
+
+approver_user:
+  email_address: approver@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: 1

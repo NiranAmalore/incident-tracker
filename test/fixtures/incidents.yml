@@ -1,0 +1,13 @@
+open_incident:
+  title: Server down in prod
+  description: Investigating a production outage
+  status: 0
+  severity: 3
+  user: reporter_user
+
+resolved_incident:
+  title: VM request
+  description: Provision a new virtual machine
+  status: 2
+  severity: 1
+  user: reporter_user

@@ -1,0 +1,15 @@
+<h1><%= @incident.title %></h1>
+
+<p><strong>Status:</strong> <span class="badge badge-<%= @incident.status %>"><%= @incident.status.humanize %></span></p>
+<p><strong>Severity:</strong> <span class="badge badge-<%= @incident.severity %>"><%= @incident.severity.humanize %></span></p>
+<p><strong>Reported by:</strong> <%= @incident.user.email_address %></p>
+<p><strong>Description:</strong></p>
+<p><%= @incident.description %></p>
+
+<div class="actions">
+  <% if Current.user.approver? %>
+    <%= link_to "Edit", edit_incident_path(@incident), class: "btn" %>
+    <%= link_to "Delete", @incident, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+  <% end %>
+  <%= link_to "Back to all incidents", incidents_path, class: "btn-link" %>
+</div>

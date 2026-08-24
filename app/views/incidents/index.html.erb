@@ -1,0 +1,24 @@
+<h1>Incidents</h1>
+
+<%= link_to "Report New Incident", new_incident_path, class: "btn" %>
+
+<table class="incidents">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Status</th>
+      <th>Severity</th>
+      <th>Reported by</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @incidents.each do |incident| %>
+      <tr>
+        <td><%= link_to incident.title, incident %></td>
+        <td><span class="badge badge-<%= incident.status %>"><%= incident.status.humanize %></span></td>
+        <td><span class="badge badge-<%= incident.severity %>"><%= incident.severity.humanize %></span></td>
+        <td><%= incident.user.email_address %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

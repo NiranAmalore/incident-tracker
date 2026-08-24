@@ -1,0 +1,9 @@
+Incident reported
+
+Your incident has been logged:
+
+Title: <%= @incident.title %>
+Severity: <%= @incident.severity.humanize %>
+Status: <%= @incident.status.humanize %>
+
+View it here: <%= incident_url(@incident) %>

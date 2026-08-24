@@ -1,0 +1,9 @@
+Incident status updated
+
+Your incident has a new status:
+
+Title: <%= @incident.title %>
+New status: <%= @incident.status.humanize %>
+Severity: <%= @incident.severity.humanize %>
+
+View it here: <%= incident_url(@incident) %>
